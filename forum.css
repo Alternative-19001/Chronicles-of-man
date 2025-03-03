@@ -1,0 +1,1037 @@
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap");
+
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    background: linear-gradient(
+        135deg,
+        rgb(0, 1, 27) 0%,
+        rgb(2, 7, 93) 35%,
+        rgb(4, 0, 63) 65%,
+        rgb(0, 1, 27) 100%
+    );
+    background-attachment: fixed; 
+    min-height: 100%; 
+}
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0); 
+    padding: 1rem 2rem;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    transition: top 0.3s ease-in-out; 
+}
+.navbar.hidden {
+    top: -100px; 
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px; 
+    margin-right: 15px; 
+}
+
+.site-title {
+    font-size: 24px; 
+    font-family: 'Merriweather', serif;
+    font-weight: lighter;
+    margin: 0; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    position: relative;
+    margin: 5px 20px ;
+    margin-left: auto; 
+}
+
+
+
+/* Links styling */
+.nav-links a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+
+}
+
+.nav-links a:hover {
+    color: rgba(149, 150, 255, 0.555);
+    transition: 0.2s linear;
+}
+
+.dropdown:hover {
+    transition: 0.3s linear;
+}
+
+.dropbtn {
+    background-color: transparent;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    padding: 4px 10px 4px 10px; 
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+}   
+
+
+.button-1 {
+    background-color: rgb(19, 17, 99);
+    border: 2px solid transparent; 
+    border-radius: 15px;
+    margin: 0px 10px 0px 10px;
+    padding: 5px 15px;
+    transition: border-color 0.3s ease, background-color 0.3s ease; 
+}
+
+.button-1:hover {
+    border-color: rgb(44, 42, 141);
+}
+
+.button-1-acti {
+    background-color: rgb(19, 17, 99);
+    border-radius: 15px;
+    padding: 5px 15px;
+    border: 2px solid rgb(44, 42, 141) ;
+}
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    left: 0;
+    transform: translateX(-50%); 
+    top: 100%; 
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    visibility: hidden;
+    background-color: rgb(2, 7, 93);  
+    padding: 8px 0;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: scaleY(1);
+    visibility: visible;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Merriweather', serif;
+    border-radius: 20px;
+    transition: background-color 30s linear;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.dropdown::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    padding-right: 1px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent rgb(255, 255, 255) transparent;
+    transition: transform 0.3s ease;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+.nav-links a.active {
+    color: rgb(255, 228, 196);  
+    border-radius: 5px; 
+}
+
+.navbar-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+position: relative;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(44, 42, 141, 0.3);  
+    border-radius: 30px;
+    padding: 5px 10px;
+    width: 300px;
+    margin-top: 20px; 
+}
+
+.navbar-content .search-container {
+    position: static;
+    transform: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+.search-input::placeholder {
+    color: rgb(211, 211, 211);
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.search-input:focus::placeholder {
+    color: transparent; 
+}
+
+/* Base scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(68, 68, 68);  
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(102, 102, 102);  
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(136, 136, 136); 
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(102, 102, 102) rgb(68, 68, 68);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 70vh;
+    padding-top: 50px;
+    position: relative;
+    margin-bottom: 32px;
+
+}
+
+.hero-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex; 
+    align-items: center;
+    gap: 20px; 
+}
+
+.hero-image {
+    width: auto;
+    padding-top: 20px;
+    height: 400px;
+    object-fit: cover;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-family: 'Merriweather', serif;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgb(231, 231, 231);
+    font-family: 'Merriweather', serif;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+}
+
+/* Froum CSS starts here  */
+.interactive-comments {
+    font-family: "Rubik", sans-serif;
+    --Moderate-blue: hsl(238, 40%, 52%);
+    --Soft-Red: hsl(358, 79%, 66%);
+    --Light-grayish-blue: hsl(239, 57%, 85%);
+    --Pale-red: hsl(357, 100%, 86%);
+    --Dark-blue: hsl(212, 24%, 26%);
+    --Grayish-Blue: hsl(211, 10%, 45%);
+    --Light-gray: hsl(223, 19%, 93%);
+    --Very-light-gray: hsl(228, 33%, 97%);
+    --White: hsl(0, 0%, 100%);
+    width: 75%;
+    padding: 0;
+    margin-left: 0;
+}
+
+/* Global styles within comments */
+.interactive-comments * {
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+}
+
+.interactive-comments p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+.interactive-comments a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.interactive-comments button {
+    cursor: pointer;
+}
+
+.interactive-comments button:hover {
+    filter: saturate(80%);
+}
+
+.interactive-comments .bu-primary {
+    background-color: rgb(23, 21, 119);  
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: .75rem 1.5rem;
+    border-radius: 4px;
+}
+
+/* Comment section layout */
+.interactive-comments .comment-section {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+.interactive-comments .container {
+    width: 100%;
+    max-width: none;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.05);  
+    border-radius: 8px;
+    border: 2px solid rgb(23, 21, 119); 
+}
+
+.interactive-comments .comments-wrp {
+    display: flex;
+    flex-direction: column;
+}
+
+.interactive-comments .comment {
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-areas: 
+        "score user controls"
+        "score comment comment"
+        "score comment comment";
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    row-gap: 1rem;
+    color: rgb(216, 216, 216);
+    width: 100%;
+    padding: 24px;
+}
+
+.interactive-comments .c-text {
+    grid-area: comment;
+    width: 100%;
+    padding-right: 16px;
+}
+
+
+.interactive-comments .c-score{
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    grid-area: score;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px;
+    padding-top: 8px;
+    width: 16px;
+    box-sizing: content-box;
+    background-color: rgba(44, 42, 141, 0.1);  
+    border-radius: 8px;
+    align-self: flex-start;
+}
+.interactive-comments .score-control{
+    width: 100%;
+    cursor: pointer;
+    object-fit: scale-down;
+}
+.interactive-comments .c-user{
+    width: 100%;
+    grid-area: user;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: rgb(190, 190, 190);
+}
+
+.interactive-comments .usr-name{
+    color: rgb(0, 94, 201);
+    font-weight: 700;
+}
+.interactive-comments .usr-img{
+    height: 2rem;
+    width: 2rem;
+}
+
+.interactive-comments .c-controls{
+    display: flex;
+    gap: 1rem;
+    color: rgb(44, 42, 141); 
+    grid-area: controls;
+    align-self: center;
+    justify-self: flex-end;
+}
+.interactive-comments .c-controls a{
+    align-items: center;
+}
+.interactive-comments .edit , .interactive-comments .reply{
+    color: rgb(228, 231, 255);  
+}
+.interactive-comments .edit{
+    display: none;
+}
+.interactive-comments .delete{
+    color: rgb(255, 75, 75);
+    display: none;
+}
+.interactive-comments .control-icon {
+    margin-right: 8px;
+    width: 14px;  
+    height: 14px; 
+
+}
+
+.interactive-comments .score-control {
+    width: 12px;  
+    height: 12px; 
+    cursor: pointer;
+    object-fit: scale-down;
+    transition: opacity 0.2s ease;
+}
+
+.interactive-comments .score-plus,
+.interactive-comments .score-minus {
+    width: 12px;  
+    height: 12px; 
+}
+
+.interactive-comments .replies{
+    display: flex;
+    margin-left: 40px;
+    padding-left: 38px;
+    border-left: 1px solid rgb(197, 198, 239);
+    width: calc(100% - 24px);
+    margin-left: 24px;
+    padding-left: 24px;
+    border-left: 2px solid rgb(23, 21, 119);  
+}
+
+.interactive-comments .reply-to{
+    color: rgb(255, 255, 255);  
+    font-weight: 500;
+}
+
+.interactive-comments .reply-input {
+    display: grid;
+    margin-bottom: 1rem;
+    grid-template-areas: "avatar input button";
+    grid-template-columns: min-content auto min-content;
+    justify-items: center;
+    gap: 1rem;
+    min-height: 9rem;
+}
+
+.interactive-comments .reply-input img {
+    grid-area: avatar;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.interactive-comments .reply-input button {
+    grid-area: button;
+    align-self: flex-start;
+}
+
+.interactive-comments .reply-input textarea {
+    grid-area: input;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid rgb(233, 235, 240);
+    border-radius: 4px;
+    resize: none;
+}
+.interactive-comments .replies {
+    display: flex;
+    margin-left: 2.5rem;
+    padding-left: 2.4rem;
+    border-left: 1px solid rgb(197, 198, 239);
+}
+
+
+
+.interactive-comments .this-user .edit , .interactive-comments .this-user .delete{
+    display: flex;
+}
+
+#login-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(2, 7, 93, 0.8);  
+    color: rgb(255, 255, 255);
+}
+
+#login-username {
+    border-radius: 10px ;
+    padding: 8px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(44, 42, 141);
+}
+
+#login-btn {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: rgb(23, 21, 119);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+@media screen and (max-width:640px) {
+    .interactive-comments .container{
+        padding: .75rem;
+    }
+    .interactive-comments .replies{
+        padding-left: 1rem;
+        margin-left: .5rem;
+    }
+    .interactive-comments .comment{
+        grid-template-areas: 
+            "user user user"
+            "comment comment comment"
+            "score ... controls"
+        ;
+
+        gap: .5rem;
+    }
+    .interactive-comments .c-score{
+        flex-direction: row;
+        width: auto;
+    }
+    .interactive-comments .reply-input{
+        grid-template-areas: 
+            "input input input"
+            "avatar ... button"
+        ;
+        grid-template-rows: auto min-content;
+        align-items: center;
+        gap: .5rem;
+    }
+    .interactive-comments .reply-input img{
+        height: 2rem;
+        width: 2rem;
+    }
+    .interactive-comments .reply-input textarea{
+        height: 6rem;
+        padding: .5rem;
+        align-self: stretch;
+    }
+}
+
+.interactive-comments .modal-wrp{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.3);
+    z-index: 1001;
+
+}
+
+.interactive-comments .modal{
+    padding: 24px;
+    max-width: 512px;
+    display: grid;
+    gap: 8px;
+    grid-template-areas: 
+    "heading heading"
+    "body body"
+    "no yes";
+    text-align: center;
+}
+
+.interactive-comments .invisible{
+    display: none;
+}
+
+.interactive-comments .modal h3{
+    grid-area: heading;
+    color: rgb(51, 66, 83);
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.interactive-comments .modal button{
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+}
+.interactive-comments .modal p{
+    grid-area: body;
+    color: rgb(103, 114, 126);
+    text-align: center;
+    margin-bottom: 4px;
+}
+.interactive-comments .modal .yes{
+    grid-area: yes;
+    background-color: rgb(255, 111, 97);
+}
+.interactive-comments .modal .no{
+    background-color: rgb(103, 114, 126);
+    grid-area: no;
+}
+
+/* Move all inline styles here */
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+#login-status {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#login-status.logged-in {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+#login-status.logged-out {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+.interactive-comments .login-status {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.interactive-comments .login-status.logged-in {
+    background-color: rgb(23, 21, 119);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(44, 42, 141);
+}
+
+.interactive-comments .login-status.logged-out {
+    background-color: rgb(255, 184, 184);
+    color: rgb(255, 111, 97);
+    border: 1px solid rgb(255, 111, 97);
+}
+
+.interactive-comments .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.interactive-comments .popup-close {
+    margin-top: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Add these styles to your existing CSS */
+.interactive-comments .score-control {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.interactive-comments .score-control:hover {
+    opacity: 0.7;
+}
+
+.interactive-comments .score-number {
+    color: rgb(92, 107, 192);
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+.interactive-comments .c-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(248, 249, 254);
+    padding: 0.5rem;
+    border-radius: 10px;
+    gap: 0.5rem;
+}
+
+.interactive-comments .score-plus,
+.interactive-comments .score-minus {
+    width: 12px;  
+    height: 12px; 
+}
+
+/* Layout styles */
+.forum-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+/* Comments section */
+.interactive-comments {
+    width: 65%;  
+    padding-left: 20px;
+}
+.interactive-comments .comment {
+    width: 100%; 
+}
+.interactive-comments #login-section {
+    position: absolute;
+    right: 32px;
+    top: 0;
+    width: 25%;  
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    border: 2px solid rgb(222, 218, 255);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .interactive-comments {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .interactive-comments #login-section {
+        position: relative;
+        width: 100%;
+        right: auto;
+        margin-bottom: 32px;
+    }
+}
+
+.interactive-comments .comment-wrp {
+    padding: 16px 0;
+    margin-bottom: 0; 
+}
+
+.interactive-comments .comment.container {
+    background: transparent;
+    border: none;
+    padding: 16px 0;
+}
+
+
+.interactive-comments .main-input {
+    order: 0;  
+    margin-bottom: 16px;  
+}
+
+.interactive-comments .comments-wrp {
+    display: flex;
+    flex-direction: column-reverse; 
+}
+
+.interactive-comments .comment-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.reply-input.container.main-input {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.reply-input.container.main-input.logged-out {
+    display: none;
+}
+
+.reply-input.container:not(.main-input) {
+    display: flex;
+}
+
+.interactive-comments .container {
+    border: none;
+    position: relative;
+    padding: 1.5rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+.interactive-comments .comment:not(:first-child) {
+    border-top: 1px solid rgb(222, 218, 255);
+    margin-top: 16px;
+}
+.interactive-comments .replies {
+    border-left: 2px solid rgb(23, 21, 119);  
+    margin-left: 24px;
+    padding-left: 24px;
+}
+
+.interactive-comments .container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgb(222, 218, 255);
+    pointer-events: none;
+}
+
+.interactive-comments .c-controls {
+    position: relative;
+    z-index: 1; 
+}
+
+.interactive-comments .reply-input.container::after,
+.interactive-comments .replies .container::after,
+.interactive-comments .comments-wrp > .container:first-child::after {
+    display: none;
+}
+
+.interactive-comments .comment,
+.interactive-comments .comment-wrp,
+.interactive-comments .comment.container {
+    border: none;
+}
+
+.footer {
+    background: rgb(2, 7, 93); 
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0px 50px 0px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    border-radius: 50px 50px 0px 0px;
+    height: 10vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.main-links {
+    display: flex;
+    gap: 20px;
+}
+
+.main-link-box {
+    background: rgba(255, 255, 255, 0);
+    border: 2px solid transparent;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-link-box:hover {
+    background: rgb(23, 21, 119);
+    border-color: rgb(44, 42, 141);
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.footer-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+
+
+.footer-description {
+    text-align: center;
+    position: relative;
+    right: 15%;
+    max-width: 500px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+    animation: slideIn 1s ease;
+}
+
+.footer-bottom {
+    font-size: 18px;
+    opacity: 0.9;
+    padding-top: 20px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hide-replies-btn {
+    background-color: rgb(23, 21, 119);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 8px 0 8px 40px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.hide-replies-btn:hover {
+    background-color: rgb(44, 42, 141);
+}
+
+.replies.comments-wrp {
+    transition: display 0.3s ease;
+}
+
+
