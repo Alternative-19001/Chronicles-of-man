@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronicles of Man</title>
+    <link rel="stylesheet" href="forum.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="  roman/images/pngegg.png" alt="Logo" class="logo-image"> <!-- Logo image -->
+                <h1 class="site-title">Chronicles</h1>
+            </div>
+            <ul class="nav-links">
+                <li class="button-1-acti"><a href="forum.html">Forum</a></li>
+                <li class="button-1"><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="roman/home.html" class="dropbtn">The Roman Empire</a>
+                    <div class="dropdown-content">
+                        <a href="roman/founding.html">Founding of Rome</a>
+                        <a href="roman/republic.html">Roman Republic</a>
+                        <a href="roman/romanempire.html">Imperial Period</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>  
+    </header>
+    
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-image-container">
+                <img src="roman/images/think.png" alt="Forum Discussion" class="hero-image">
+            </div>
+            <div class="hero-content">
+                <h1>Join the Discussion</h1>
+                <p>Engage in meaningful conversations about history, share your insights, and connect with fellow history enthusiasts.</p>
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-input" id="search-input">
+                    <button type="button" class="search-button" id="search-btn">
+                        <img src="roman/images/Search_Icon.svg.png" alt="Search" class="search-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="forum-container">
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <div class="interactive-comments">
+                <div id="login-section">
+                    <input id="login-username" type="text" placeholder="Enter your username" />
+                    <button id="login-btn">Log In</button>
+                    <button id="logout-btn" style="display: none;">Log Out</button>
+                </div>
+                
+                <div id="comment-input-section" style="display: none;"></div>    
+
+                <template class="reply-input-template">
+                    <div class="reply-input container">
+                        <img src="roman/images/profile.png" alt="" class="usr-img">
+                        <textarea class="cmnt-input" placeholder="Add a comment..."></textarea>
+                        <button class="bu-primary">SEND</button>
+                    </div>
+                </template>
+
+                <template class="comment-template">
+                    <div class="comment-wrp">
+                        <div class="comment container">
+                            <div class="c-score">
+                                <img src="roman/images/up.svg" alt="plus" class="score-control score-plus">
+                                <p class="score-number">5</p>
+                                <img src="roman/images/down.svg" alt="minus" class="score-control score-minus">
+                            </div>
+                            <div class="c-controls">
+                                <a  class="delete"><img src="roman/images/delete.svg" alt="" class="control-icon">Delete</a>
+                                <a  class="edit"><img src="roman/images/edit.svg" alt="" class="control-icon">Edit</a>
+                                <a  class="reply"><img src="roman/images/reply.svg" alt="" class="control-icon">Reply</a>
+                            </div>
+                            <div class="c-user">
+                                <img src="roman/images/white.png" alt="" class="usr-img">
+                                <p class="usr-name"></p>
+                                <p class="cmnt-at"></p>    
+                            </div>
+                            <p class="c-text">
+                                <span class="reply-to"></span>
+                                <span class="c-body"></span>
+                            </p>
+                        </div><!--comment-->
+                        <button class="hide-replies-btn">Hide Replies</button>
+                        <div class="replies comments-wrp">
+                        </div><!--replies-->
+                    </div>
+                </template>
+
+                <div class="comment-section">
+                    <div class="comments-wrp">
+                    </div>
+                    
+                    <div class="reply-input container main-input">
+                        <img src="roman/images/white.png" alt="" class="usr-img">
+                        <textarea class="cmnt-input" placeholder="Add a comment..."></textarea>
+                        <button class="bu-primary" id="send-btn">SEND</button>
+                    </div>
+                </div>
+
+                <div class="modal-wrp invisible">
+                    <div class="modal container">
+                        <h3>Delete comment</h3>
+                        <p>Are you sure you want to delete this comment? This will remove the comment and cant be undone</p>
+                        <button class="yes">YES,DELETE</button>
+                        <button class="no">NO,CANCEL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="main-links">
+                <a href="home.html" class="main-link-box">Home</a>
+                <a href="founding.html" class="main-link-box">Roman Eras</a>
+                <a href="daily.html" class="main-link-box">Roman Life</a>
+                <a href="about.html" class="main-link-box">About Us</a>
+            </div>
+        </div>
+            </div>
+                <div class="footer-description">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © Chronicles of Man | History Revived
+        </div>
+    </footer>
+
+    <script src=forum.js></script>
+    <script>
+        const API_URL = 'http://localhost:3000';
+    </script>
+</body>

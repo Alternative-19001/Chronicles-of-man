@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    background-color: rgb(255, 244, 230)
+}
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0); 
+    padding: 1rem 2rem;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    transition: top 0.3s ease-in-out; 
+}
+.navbar.hidden {
+    top: -100px; 
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 50px;
+    height: 50px; 
+    margin-right: 15px; 
+}
+
+.site-title {
+    font-size: 24px; 
+    font-family: 'Merriweather', serif;
+    font-weight: lighter;
+    margin: 0; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    position: relative;
+    margin: 20px ;
+    margin-left: auto; 
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+
+}
+
+.nav-links a:hover {
+    color: bisque;
+    transition: 0.2s linear;
+}
+
+.forum-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+    margin-left: 20px;
+    padding: 4px 10px;
+    background-color: rgb(182, 142, 93);
+    border-radius: 10px;
+    border: 1px solid transparent; 
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+.forum-link:hover {
+    background-color: rgb(162, 122, 73); 
+    color: #fafaeb;
+    border-color: rgb(110, 81, 0); 
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #00000000;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    left: 0;
+    transform: translateX(-50%); 
+    top: 100%; 
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    visibility: hidden;
+    border-radius: 20px;
+
+}
+
+.dropdown-content a:hover {
+    color: rgb(75, 57, 41); 
+    transform: scale(1.01);
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: scaleY(1);
+    visibility: visible;
+    transition: transform 0.3s ease, ;
+}
+
+.dropdown-content a {
+    color: rgb(22, 22, 22);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Merriweather', serif;
+    background-color: rgb(255, 237, 216);
+    transition: background-color 2s linear;
+}
+.dropdown-content a:first-child {
+    border-radius: 10px 10px 0 0;
+}
+.dropdown-content a:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.dropdown::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    padding-right: 1px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #ffffff transparent;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+.nav-links a.active  {
+    color: bisque; 
+}
+.dropdown-content a.active {
+    color: rgb(122, 94, 69);
+}
+.full-page-image {
+    position: relative;
+    height: 100vh;
+    background-image: url('../images/byzantine-empire-gettyimages-804445124.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: left; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+.overlay {
+    position: absolute;
+    text-align-last: center;
+    background: rgba(48, 48, 48, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    padding-left: 2rem; 
+    box-sizing: border-box;
+}
+
+.overlay h2, .overlay h1 {
+    margin: 0;
+}
+
+.overlay h2 {
+    align-self: center;
+    font-size: 24px;
+    letter-spacing: 0.5rem; 
+    font-weight: 500;
+    color: bisque;
+}
+
+.overlay h1 {
+    width: auto;
+    border-radius: 20px;
+    align-self: center;
+    font-size: 78px;
+    font-weight:500;
+    color: #ffffff;
+}
+::-webkit-scrollbar {
+  width: 10px; 
+  height: 10px; 
+  background-color: #333; 
+  transition: opacity 0.3s; 
+}
+
+::-webkit-scrollbar {
+  opacity: 0; 
+}
+
+.scrollable-area:hover::-webkit-scrollbar {
+  opacity: 1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #666; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #444; 
+  border-radius: 10px; 
+}
+
+.parent-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    margin-right: 40px;
+    margin-left: 40px;
+    }
+
+    .page-heading {
+    flex: 1; 
+    position: relative;
+    margin-left: 20px; 
+    padding: 10px 0; 
+    font-size: 32px; 
+    color: #333; 
+    }
+
+    .page-heading h1 {
+    font-size: 40px; 
+    color: #4A4A4A; 
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold; 
+    }
+
+    .page-heading h2 {
+    font-size: 20px; 
+    color: #2C3E50;
+    margin-bottom: 15px;
+    }
+
+    .page-heading p {
+    line-height: 1.5;
+    font-size: 16px; 
+    font-weight:500;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    padding-right: 50px;
+    }
+
+    .page-heading .romulus h2,
+    .page-heading .aeneas h2,
+    .page-heading .historical-background h2,
+    .page-heading .kings-of-rome h2,
+    .page-heading .romulus1 h2, 
+    .page-heading .servius-tullius h2,
+    .page-heading .tarquinius-superbus h2 {
+        color: #161616;
+        font-size: 28px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .page-heading .romulus p,
+    .page-heading .aeneas p,
+    .page-heading .historical-background p,
+    .page-heading .kings-of-rome p,
+    .page-heading .romulus1 p, 
+    .page-heading .servius-tullius p,
+    .page-heading .tarquinius-superbus p {
+        font-size: 17px;
+        font-family: 'Merriweather', serif;
+        color: #141414;
+        margin-bottom: 15px;
+    }  
+    .image-container {
+        margin-bottom: 20px; 
+        text-align: center; 
+    }
+
+    .styled-image {
+        width: 100%; 
+        max-width: 600px; 
+        height: auto; 
+        border-radius: 8px; 
+        transition: transform 0.3s ease; 
+    }
+
+    .styled-image:hover {
+        transform: scale(1.05); 
+    }
+
+    .image-description {
+        font-size: 14px; 
+        color: #777; 
+        margin-top: 8px; 
+        font-family: 'Merriweather', serif; 
+    }
+
+.right-container {
+position: relative;
+right: 25px;
+display: flex;
+flex-direction: column; 
+width: 300px; 
+margin-right: 40px; 
+margin-top: 40px;
+}
+
+.toc-container {
+background-color: rgb(255, 237, 216); 
+width: 100%; 
+overflow: hidden; 
+transition: max-height 0.7s ease-in-out;
+z-index: 10; 
+max-height: fit-content;
+padding: 20px;
+}
+.aws-container {
+background-color: rgb(255, 240, 223); 
+width: 100%; 
+z-index: 10; 
+height: 20px;
+padding: 20px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.additional-container { 
+background-color: rgb(255, 237, 216); 
+width: 100%; 
+overflow: hidden; 
+z-index: 10; 
+max-height: fit-content;
+padding: 20px;
+}
+
+.additional-container h2 {
+font-size: 24px;
+color: #2c3e50;
+margin-bottom: 15px;
+}
+
+.additional-container p {
+font-size: 16px;
+color: #333;
+line-height: 1.5;
+margin-bottom: 15px;
+}
+
+.additional-container ul {
+list-style-type: none;
+padding: 0;
+}
+
+.additional-container li {
+margin-bottom: 10px;
+}
+
+.additional-container .additional-link {
+text-decoration: none;
+color: #2b2b2b;
+font-size: 16px;
+transition: color 0.5s;
+}
+
+.additional-container .additional-link:hover {
+color: rgb(255, 255, 255);
+background-color: rgb(29, 26, 56);
+border-radius: 5px;
+padding: 7px;
+font-weight: bold;
+}
+
+.toc-container.expanded {
+max-height: 1000px; 
+opacity: 1; 
+}
+
+.toc-title {
+cursor: pointer;
+font-weight: bold;
+font-size: 20px;
+color: #2c3e50;
+margin-bottom: 10px;
+}
+
+.toc-content {
+max-height: 0; 
+font-family: 'Merriweather', serif;
+opacity: 0; 
+transition: opacity 0.5s ease, max-height 0.5s ease; 
+}
+
+.toc-container.expanded .toc-content {
+max-height: 400px; 
+opacity: 1; 
+}
+
+.toc-content a {
+display: block;
+font-size: 16px;
+font-family: 'Merriweather', serif;
+margin-bottom: 5px;
+text-decoration: none;
+padding-bottom: 10px;
+color: #000000;
+transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease; 
+
+}
+
+.toc-content a:hover{
+color: rgb(255, 255, 255);
+background-color: rgb(29, 26, 56);
+border-radius: 5px;
+padding: 4px;
+font-weight: bold;
+}
+
+.toc-period {
+font-weight: bold;
+margin-bottom: 10px;
+color: #555; 
+font-size: 18px; 
+}
+
+.toggle-button {
+color: rgb(40, 46, 126);
+cursor: pointer;
+font-size: 0.9em;
+}
