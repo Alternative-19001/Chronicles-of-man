@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Roman Empire</title>
+    <link rel="stylesheet" href="css/daily.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="images/Untitled_design-removebg-preview (1).png" alt="Logo" class="logo-image">
+                <h1 class="site-title">Roman Chronicles</h1>
+            </div>
+            <div>
+                <a href="../forum.html" class="forum-link">Forum</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Periods</a>
+                    <div class="dropdown-content">
+                        <a href="founding.html">The Founding</a>
+                        <a href="republic.html">The Republic</a>
+                        <a href="romanempire.html">Roman Empire</a>
+                        <a href="byzantine.html">Byzantine Empire</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Topics</a>
+                    <div class="dropdown-content">
+                        <a href="religion.html">Religion and Mythology</a>
+                        <a class="active" href="daily.html">Daily Life</a>
+                        <a href="science.html">Science and Technology</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>  
+    </header>
+
+    <section class="full-page-image">
+        <div class="overlay">
+            <h2></h2>
+            <h1>The Daily lives of<br> The Romans</h1>
+        </div>
+    </section>   
+
+    <section>
+
+        <div class="parent-container">
+            <div class="page-heading">
+                <h1>The Daily Lives of Roman Citizens</h1>
+                <p>The daily lives of Roman citizens in early Rome reflected a mix of simplicity and practicality, shaped by their environment and social structure. <b>For the lower classes, life revolved around agriculture, small trades, and physical labor.</b> Families lived in modest homes, relying on basic tools and shared resources to sustain their livelihoods. The primary focus was survival, with farming and animal husbandry forming the backbone of the economy. <b>In contrast, the elite enjoyed a more comfortable lifestyle, engaging in politics, managing estates, and participating in religious ceremonies.</b>
+            
+                <section class="aeneas" id="daily-lives">
+                    <h2>Daily Lives of Roman Citizens – The Elite</h2>
+                    <p>For the elite Roman citizens, life was characterized by luxury and privilege. Wealthy families lived in <b>lavish villas</b> adorned with ornate mosaics and frescoes, often accompanied by private courtyards and gardens. Their daily routine revolved around leisure, with activities like attending <b>gladiatorial games</b>, theater performances, and banquets being common. Education was a priority, especially for the children of the elite, who were taught <b>rhetoric, philosophy</b>, and literature. Discussions about politics, art, and culture often took place in private gatherings, underscoring their dominance in shaping Roman society.</p>
+                </section>
+                
+                <section class="aeneas" id="daily-lives-common">
+                    <h2>Daily Lives of Roman Citizens – The Commoners</h2>
+                    <p>For the plebeians and lower-class citizens, life was much more challenging. Most lived in crowded <b>insulae (apartment buildings)</b>, which were prone to fires and lacked basic facilities. Their day-to-day lives were dominated by hard work, with occupations ranging from farming and crafting to selling goods in the bustling Roman forums. Despite their struggles, festivals and public baths were vital for recreation and socialization. These events offered <b>a brief escape</b> from their hardships, creating moments of joy and connection among the Roman populace.</p>
+                </section>
+          </div>
+
+
+
+
+
+
+            <div class="right-container">
+              <div class="aws-container"></div>
+                <div class="toc-container">
+                    <div class="toc-title" onclick="toggleTOC()">Table of Contents [ <span class="toggle-button" id="toggle-text">Hide</span> ]</div>
+                    <div class="toc-content" id="toc-content">
+                        <div class="toc-period">Daily Lives of Romans</div>
+                        <a href="#daily-lives" class="toc-link"> The Elites</a>
+                        <a href="#daily-lives-common" class="toc-link"> The Commoners </a>
+                    </div>
+                </div>
+
+                <div class="aws-container"></div>
+
+                <div class="additional-container">
+                    <h2>Related Topics</h2>
+                    <p></p>
+                    <ul>
+                        <li><a href="science.html" class="additional-link">Roman Architecture</a></li>
+                        <li><a href="religion.html" class="additional-link">Roman Culture</a></li>
+                        <li><a href="daily.html" class="additional-link">Roman Politics</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+
+  <footer class="footer">
+    <div class="footer-top">
+        <div class="main-links">
+            <a href="home.html" class="main-link-box">Home</a>
+            <a href="founding.html" class="main-link-box">Roman Eras</a>
+            <a href="daily.html" class="main-link-box">Roman Life</a>
+            <a href="../forum.html" class="main-link-box">Forum</a>
+        </div>
+    </div>
+
+    <div class="footer-body">
+        <div class="footer-links">
+            <div>
+                <h3>Roman Eras</h3>
+                <a href="founding.html">Founding</a>
+                <a href="republic.html">Republic</a>
+                <a href="romanempire.html">Empire</a>
+                <a href="byzantine.html">Byzantine Empire</a>
+            </div>
+            <div>
+                <h3>Roman Life</h3>
+                <a href="daily.html">Daily Life</a>
+                <a href="religion.html">Religion and Beliefs</a>
+                <a href="science.html">Architecture</a>
+            </div>
+        </div>
+                        <div class="footer-description">
+            Discover the legacy of the Roman Empire, from its glorious rise to its ultimate transformation. Engage in discussions, share insights, and explore fascinating moments of history.
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © Chronicles of Man | History Revived
+    </div>
+</footer>
+    <script>
+        const navbar = document.querySelector('.navbar');
+
+        // Navbar hides on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+        });
+
+function toggleTOC() {
+    const tocContainer = document.querySelector('.toc-container');
+    const toggleText = document.getElementById('toggle-text');
+
+    if (tocContainer.classList.contains('expanded')) {
+        tocContainer.classList.remove('expanded');
+        toggleText.innerHTML = 'show';
+    } else {
+        tocContainer.classList.add('expanded');
+        toggleText.innerHTML = 'hide';
+    }
+}
+
+document.querySelectorAll('.toc-link').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelectorAll('.toc-link').forEach(link => link.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+document.querySelectorAll('.toc-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor click behavior
+
+        const targetId = this.getAttribute('href').substring(1); // Strip the "#" character
+        const targetElement = document.getElementById(targetId);
+
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+
+    });
+});
+
+    </script>
+</body>
+</head>
