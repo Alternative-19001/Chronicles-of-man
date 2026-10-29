@@ -267,7 +267,7 @@ body {
 .right-image-container {
     position: relative;
     margin-left: 70px;
-    background-image: url(Images/best-emperors-in-roman-history.png);
+    background-image: url(images/best-emperors-in-roman-history.png);
     border-radius: 20px;
     top: 50px;  
     width: 100vh;
